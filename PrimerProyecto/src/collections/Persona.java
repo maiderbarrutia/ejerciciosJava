@@ -1,4 +1,4 @@
-package arrayLists;
+package collections;
 
 public class Persona {
 	private int num;
