@@ -9,8 +9,8 @@ public class Cuenta {
 	private List<Ingreso> ingresos;
 	
 	public Cuenta(Usuario usuario) {
-		this.usuario = usuario;
         this.saldo = 0.0;
+		this.usuario = usuario;
         this.gastos = new ArrayList<>();
         this.ingresos = new ArrayList<>();
 	}
@@ -33,22 +33,26 @@ public class Cuenta {
 	
 	// Método para añadir un ingreso
 	public void addIngresos(String description, double cantidad) {
-//        Gasto nuevoIngreso = new Gasto(cantidad, description);
-//        gastos.add(nuevoIngreso);
-		ingresos.add(new Ingreso(cantidad, description));
-        saldo += cantidad;
-    }
+	    Ingreso nuevoIngreso = new Ingreso(cantidad, description); // Crear un objeto de tipo Ingreso
+	    nuevoIngreso.setDinero(cantidad);
+	    ingresos.add(nuevoIngreso); // Agregar el ingreso a la lista de ingresos
+	    saldo += cantidad; // Actualizar el saldo agregando la cantidad del ingreso
+	}
+
 
 	// Método para añadir un gasto
 	public void addGastos(String description, double cantidad) {
-//        Gasto nuevoGasto = new Gasto(cantidad, description);
-//        gastos.add(nuevoGasto);
+		Gasto nuevoGasto = new Gasto(cantidad, description);
+	    nuevoGasto.setDinero(cantidad);
 		try {
+			
             if (saldo < cantidad) {
                 throw new GastoException(); // Lanza la excepción si el saldo es insuficiente
             }
-            gastos.add(new Gasto(cantidad, description));
+            
+            gastos.add(nuevoGasto);
             saldo -= cantidad;
+            
         } catch (GastoException e) {
             System.out.println(e.getMessage()); // Imprime el mensaje de la excepción
         }
@@ -64,8 +68,7 @@ public class Cuenta {
 
 	@Override
 	public String toString() {
-		return "Cuenta [saldo=" + saldo + ", usuario=" + usuario + ", gastos=" + gastos + ", ingresos=" + ingresos
-				+ "]";
+		return "Usuario: " + usuario + "\n   Saldo: " + saldo;
 	}
 	
 }

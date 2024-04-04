@@ -1,34 +1,18 @@
 package appGestionGastosPersonales;
 
-public class Gasto extends Dinero {
 
-//	public Gasto(double gasto, String description) {
-//        System.out.println("Se ha registrado un gasto de " + gasto + " con la descripción: " + description);
-//    }
-//
-//    
-////    @Override
-////    public String toString() {
-////        return "Gasto";
-////    }
-//	
-//	@Override
-//	public String toString() {
-//		return "Gasto [getDinero()=" + getDinero() + ", getDescription()=" + getDescription() + ", getClass()="
-//				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-//	}
+public class Gasto extends Dinero {
 	
 	public Gasto(double gasto, String descripcion) {
-        System.out.println("Se ha registrado un gasto de " + gasto + " con la descripción: " + descripcion);
-    }
+		System.out.println("Se ha realizado un " + descripcion + " de " + gasto + "€");
+	
+	}
 
+	//ESTÁ MAL EL TOSTRING
     @Override
     public String toString() {
-        return "Gasto: " + super.toString();
-    }
-	
-	
-	
-	
+        return "Gasto: " + getDinero();
+        
+    }	
 	
 }

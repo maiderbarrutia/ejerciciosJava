@@ -23,17 +23,15 @@ public class Usuario {
 	public String getDNI() {
 		return DNI;
 	}
-	public boolean setDNI(String dNI) {
-		// Expresión regular para validar el formato del DNI
-        String regex = "^\\d{8}[-]?[a-zA-Z]$";
+	public boolean setDNI(String DNI) {
+        String regex = "^\\d{8}-?[a-z]?$";
         
-        // Validar el formato del DNI
-        if (dNI.matches(regex)) {
-            this.DNI = dNI;
-            return true; // DNI válido, asignado correctamente
+        if (DNI.matches(regex)) {
+            this.DNI = DNI;
+            return true;
         } else {
         	System.out.println("El DNI no tiene un formato válido.");
-            return false; // DNI inválido
+            return false; 
         }
 	}
 	@Override
