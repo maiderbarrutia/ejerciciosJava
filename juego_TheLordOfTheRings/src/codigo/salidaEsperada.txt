@@ -1,0 +1,16 @@
+Aragorn ataca a Troll
+Troll recibe 30 puntos de daño y tiene 20 puntos de vida
+Legolas ataca a Urukhai
+Urukhai recibe 9 puntos de daño y tiene 31 puntos de vida
+Gimli ataca a Orco
+Orco ha muerto
+Troll ataca a Aragorn
+Aragorn recibe un ataque de Troll y tiene 196 puntos de vida
+Urukhai ataca a Legolas
+Legolas recibe un ataque de Urukhai y tiene 298 puntos de vida
+Legolas ataca a Troll
+Troll recibe 9 puntos de daño y tiene 11 puntos de vida
+Gimli ataca a Urukhai
+Urukhai ha muerto
+Troll ataca a Legolas
+Legolas recibe un ataque de Troll y tiene 295 puntos de vida

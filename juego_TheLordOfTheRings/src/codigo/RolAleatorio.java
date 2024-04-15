@@ -2,7 +2,7 @@ package codigo;
 
 import java.util.Random;
 
-public class Rol {
+public class RolAleatorio {
 
 	private static int dado(int d, int c) {
 		Random r = new Random();
@@ -47,13 +47,13 @@ public class Rol {
 	
 	public static void main(String[] args) {
 		
-		PJugador aragorn = new PJugador("Aragorn", 200, 5, 6, 1);
-		PJugador legolas = new PJugador("Legolas", 300, 3, 3, 2);
-		PJugador gimli = new PJugador("Gimli", 100, 7, 5, 2);
+		PJugador aragorn = new PJugador("Aragorn", dado(3,100), dado(2,12), dado(1,6), dado(1,4));
+		PJugador legolas = new PJugador("Legolas", dado(3,100), dado(2,12), dado(1,6), dado(1,4));
+		PJugador gimli = new PJugador("Gimli", dado(3,100), dado(2,12), dado(1,6), dado(1,4));
 		
-		Personaje orco = new Personaje("Orco",  30, 3);
-		Personaje urukhai = new Personaje("Urukhai", 40, 4);
-		Personaje troll = new Personaje("Troll", 50, 5);
+		Personaje orco = new Personaje("Orco",  dado(2,100), dado(1,12));
+		Personaje urukhai = new Personaje("Urukhai", dado(2,100), dado(1,12));
+		Personaje troll = new Personaje("Troll", dado(2,100), dado(1,12));
 		
 		pjAtaca(aragorn,troll);
 		pjAtaca(legolas,urukhai);

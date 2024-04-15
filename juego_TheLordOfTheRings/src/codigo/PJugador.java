@@ -41,30 +41,35 @@ public class PJugador extends Personaje implements Guerrero {
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
+	
+	
+	@Override
+	public void atacar(Personaje enemigo) {
+	    int lesionCausada = this.getAtaque() * this.getNivel();
+	    int saludActualEnemigo = enemigo.getSalud();
+
+	    
+	    if (lesionCausada >= saludActualEnemigo) {
+	    	enemigo.setSalud(0);
+	    } else {
+	    	enemigo.setSalud(saludActualEnemigo - lesionCausada);
+	    }
+	    
+	}
 
 	@Override
-	public void atacar(Personaje atacado) {
-        int lesion = this.getAtaque() * this.getNivel();
-        if (lesion >= atacado.getSalud()) {
-        	atacado.setSalud(0);
-        } else {
-        	atacado.setSalud(atacado.getSalud() - lesion);
-        }
-    }
+	public void defender(Personaje enemigo) {
+	    int ataqueEnemigo = enemigo.getNivel();
+	    int defensaJugador = this.getDefensa();
+	    int saludActualJugador = this.getSalud();
 
-	@Override
-	public void defender(Personaje atacante) {
-        int lesion = atacante.getNivel() - this.getDefensa();
-        if (lesion > 0) {
-            if (lesion >= this.getSalud()) {
-                this.setSalud(0);
-            } else {
-                this.setSalud(this.getSalud() - lesion);
-            }
-        }
-    }
-	
-	
-	
+	    if (ataqueEnemigo > defensaJugador) {
+	        if (ataqueEnemigo >= saludActualJugador) {
+	            this.setSalud(0);
+	        } else {
+	            this.setSalud(saludActualJugador - (ataqueEnemigo - defensaJugador));
+	        }
+	    }
+	}
 	
 }
