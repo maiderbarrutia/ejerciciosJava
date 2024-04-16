@@ -22,7 +22,7 @@ public class MainExcepciones {
 		}
     	
     	
-    	//EJEMPLOS:
+    	//CLASES PREDEFINIDAS:
         // 1- NullPointerException: Se produce cuando se intenta acceder a un objeto que es null.
         String str = null;
         try {

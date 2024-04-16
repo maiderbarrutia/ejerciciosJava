@@ -35,7 +35,7 @@ public class MainExcepcionesCreadas {
 			//Lanzar el método loguin
 			if(!LoginService.login(nombre, passwd)){
 				valido =false;
-				throw new ErrorLoginException ();
+				throw new ErrorLoginException (); //Delegación de excepciones: Es una excepción personalizada
 			}
 		}catch(ErrorLoginException error){
 		//Código que se ejecutará si el código del bloque try lanza una excepción

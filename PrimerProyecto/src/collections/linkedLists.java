@@ -65,6 +65,10 @@ public class linkedLists {
         // removeFirst(): Eliminar el primer elemento de la LinkedList
         Persona personaEliminada = listaPersonas.removeFirst();
         System.out.println("Persona eliminada del principio de la lista: " + personaEliminada.getNombre());
+        
+      //Eliminar el carácter de la tercera posición (indice 2)
+        Persona personaEliminada2 = listaPersonas.remove(2);
+        System.out.println("Persona eliminada de la tercera posición de la lista: " + personaEliminada2.getNombre());
 
         // clear(): Vaciar la LinkedList
         listaPersonas.clear();
