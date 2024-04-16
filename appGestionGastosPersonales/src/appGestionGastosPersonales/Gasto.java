@@ -11,7 +11,8 @@ public class Gasto extends Dinero {
 	//ESTÁ MAL EL TOSTRING
     @Override
     public String toString() {
-        return "Gasto: " + getDinero();
+//        return "Gasto: " + getDinero();
+    	return " " + getDinero();
         
     }	
 	

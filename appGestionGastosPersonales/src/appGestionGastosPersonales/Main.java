@@ -7,23 +7,22 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-        // Paso 1: Creación del usuario y sus datos
+        // Creación del usuario y sus datos
         System.out.println("Introduzca los datos del usuario:");
         Usuario usuario = crearUsuario(scanner);
 
-        // Paso 2: Creación de la cuenta (
+        // Creación de la cuenta (
         Cuenta cuenta = new Cuenta(usuario);
 
-        // Paso 3: Visualización del menú
-
+        // Mostrar el menú
         mostrarMenu();
 
-        // Paso 4: Procesar acciones
+        // Procesar acciones del menú
         boolean salir = false;
         while (!salir) {
-            System.out.print("Realiza una nueva acción:");
+            System.out.print("\nRealiza una nueva acción:");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -33,13 +32,13 @@ public class Main {
                     ingresar(scanner, cuenta);
                     break;
                 case 3:
-                    System.out.println(cuenta.getGastos());
+                    System.out.println("Gastos: " + cuenta.getGastos());
                     break;
                 case 4:
-                	System.out.println(cuenta.getIngresos());
+                	System.out.println("Ingresos: " + cuenta.getIngresos());
                     break;
                 case 5:
-                	System.out.println(cuenta.getSaldo());
+                	System.out.println("Saldo: " + cuenta.getSaldo());
                     break;
 	            case 0:
 	                salir = true;
@@ -49,11 +48,12 @@ public class Main {
             }
         }
         
-        
+        System.out.println("\n" + cuenta.toString());
 
-        // Paso 6: Finalización de la aplicación
-        System.out.println("Fin del programa.");
+        // Finalización de la aplicación
+        System.out.println("\nFin del programa.");
         System.out.println("Gracias por utilizar la aplicación de M03B en el curso 1s2324");
+        
         // Cerrar el scanner
         scanner.close();
 
@@ -67,7 +67,7 @@ public class Main {
 
         System.out.print("Edad: ");
         usuario.setEdad(scanner.nextInt());
-        scanner.nextLine(); // Limpiar el buffer
+        scanner.nextLine();
 
         // DNI (Dará falso hasta que se introduzca uno correcto)
         boolean dniCorrecto = false;
@@ -76,7 +76,7 @@ public class Main {
             System.out.print("DNI: ");
             String dni = scanner.nextLine();
             
-            if (usuario.setDNI(dni)) { // Llamada al método setDNI de la clase Usuario
+            if (usuario.setDNI(dni)) {
                 dniCorrecto = true;
             } 
         }

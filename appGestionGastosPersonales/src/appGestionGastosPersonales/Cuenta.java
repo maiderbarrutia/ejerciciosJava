@@ -67,8 +67,24 @@ public class Cuenta {
 	}
 
 	@Override
+//	public String toString() {
+//		return "Usuario: " + usuario + "\n   Saldo: " + saldo;
+//	}
 	public String toString() {
-		return "Usuario: " + usuario + "\n   Saldo: " + saldo;
+	    String resultCuenta = 
+	    		"\nUsuario: " + usuario + "\n" +
+	    		"\nSaldo: " + saldo + "\n" +
+	            "\nGastos:\n";
+				for (Dinero dinero : gastos) {
+				    	resultCuenta += dinero + "\n";
+				    }
+	    
+				resultCuenta += "\nIngresos:\n";
+			    for (Dinero dinero : ingresos) {
+			    	resultCuenta += dinero;
+			    }
+	    
+	    return resultCuenta;
 	}
 	
 }

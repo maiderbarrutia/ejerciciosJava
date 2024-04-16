@@ -10,7 +10,8 @@ public class Ingreso extends Dinero {
 	//ESTÁ MAL EL TOSTRING
     @Override
     public String toString() {
-        return "Ingreso: " + getDinero();
+//        return "Ingreso: " + getDinero();
+    	return " " + getDinero();
     }
 	
 	

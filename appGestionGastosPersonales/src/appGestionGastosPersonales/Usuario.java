@@ -35,10 +35,18 @@ public class Usuario {
         }
 	}
 	@Override
-	public String toString() {
-		return "Usuario [nombre=" + nombre + ", edad=" + edad + ", DNI=" + DNI + "]";
-	}
+//	public String toString() {
+//		return "Usuario [nombre=" + nombre + ", edad=" + edad + ", DNI=" + DNI + "]";
+//	}
 	
+	public String toString() {
+	    String resultUsuario = "\n" +
+	    		"\tNombre: " + nombre + "\n" +
+	    		"\tEdad: " + edad + "\n" +
+	    		"\tDNI: " + DNI ;
+
+	    return resultUsuario;
+	}
 	
 	
 	
