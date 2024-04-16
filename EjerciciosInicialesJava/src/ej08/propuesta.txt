@@ -1,7 +1,0 @@
-
-
-Crear un ejercicio (con las clases que se consideren necesarias) que pida al usuario una cadena de carácteres y devuelva las siguientes tres operaciones:
-
-- Indicar cuántas vocales tiene
-- Mostrar por consola dicha cadena de forma invertida
-- Pedir al usuario un carácter y, a continuación, determinar el número de apariciones que tiene dicho carácter en la cadena introducida

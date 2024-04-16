@@ -1,9 +1,0 @@
-Crea una clase llamada MatrizAleatoria con un atributo que consista en una matriz de enteros de 2 filas y 3 columnas
-
-Crea un métodos constructor que rellene la matriz de números aleatorios (tendrás que investigar cómo hacerlo)
-
-Crea un método que imprima la matriz por consola
-
-Crea otro método que muestre, ademas de la matriz, junto a cada fila y columna, el resultado de la suma de todos los números que la componen (se imprimirá en negro todo, los colores son solamente para realzar el ejercicio)
-
-Desde el método main, comprueba que funciona correctamente.

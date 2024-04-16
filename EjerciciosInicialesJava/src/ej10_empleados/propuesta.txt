@@ -1,5 +1,0 @@
-Crea una clase llamada Empleado con atributos nombre (String) y sueldo (double). Implementa el constructor y los getters y setters.
-
-En el main, solicita al usuario que ingrese el nombre y el sueldo de 5 empleados, instanciando sus objetos. Guarda cada objeto de la clase Empleado en un array
-
-Recorre el array buscando el empleado con mayor sueldo, e imprime por consola el nombre y el sueldo de dicho empleado
