@@ -13,8 +13,8 @@ public class ConnectBDOracle {
 //    private static final String USER = "alumno"; // Usuario de la base de datos Oracle
 //    private static final String PASSWORD = "user123"; // Contraseña de la base de datos Oracle
     
-    private static final String USER = "system"; // Usuario de la base de datos Oracle
-    private static final String PASSWORD = "maiWebDevelop23"; // Contraseña de la base de datos Oracle
+    private static final String USER = "system"; // Usuario root de la base de datos Oracle
+    private static final String PASSWORD = "maiWebDevelop23"; // Contraseña de usuario root de la base de datos Oracle
 
     public void connectToDB() throws SQLException {
         Connection connect = conexionBBDD();

@@ -3,8 +3,11 @@ package ejEnVivo_persistenciaBBDD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ConnectDBXampp {
@@ -13,10 +16,9 @@ public class ConnectDBXampp {
 	private final String PASSWORD;
 	
 	public ConnectDBXampp() {
-		this.HOST = "jdbc:mysql://localhost:3306/"; //Conectarse a xampp
-//		this.HOST = "jdbc:oracle:thin:@localhost:1521:xe"; //Conectarse a oracle
-		this.USER = "MySQL80";
-		this.PASSWORD = "maiWebDevelop23 ";
+		this.HOST = "jdbc:mysql://localhost:3311/"; //Conectarse a xampp
+		this.USER = "root";
+		this.PASSWORD = "";
 	}
 	
 
@@ -36,10 +38,46 @@ public class ConnectDBXampp {
 		comandoSQL = "CREATE DATABASE IF NOT EXISTS vt_m03b";
 		sentencia.executeUpdate(comandoSQL);
 		
+		//Usar la base de datos
+		comandoSQL = "USE vt_m03b;";
+		sentencia.executeUpdate(comandoSQL);
+		
+		//Crear tabla alumnos
+		comandoSQL = "CREATE TABLE Alumnos(id_alumno INT AUTO_INCREMENT PRIMARY KEY, " +
+		"nombre VARCHAR(50) NOT NULL);";
+		sentencia.executeUpdate(comandoSQL);
+		
+		//Añadir valores a la tabla
+		List<Alumno> alumnos = new ArrayList<>();
+        alumnos.add(new Alumno("Juan"));
+        alumnos.add(new Alumno("María"));
+        alumnos.add(new Alumno("Pedro"));
+        alumnos.add(new Alumno("Pepe"));
+        
+//		comandoSQL = "INSERT INTO Alumnos(nombre) VALUES (\"Diego\"), (\"Andrea\"), (\"Sonia\"), (\"Luis\");";
+
+        for (Alumno alumno : alumnos) {
+            comandoSQL = "INSERT INTO Alumnos (nombre) VALUES ('" + alumno.getName() + "')";
+            sentencia.executeUpdate(comandoSQL);
+        }
+        
+		//Mostrar la lista de Alumnos
+		comandoSQL = "SELECT * FROM Alumnos";
+		ResultSet result = sentencia.executeQuery(comandoSQL);
+		
+		List<Alumno> alumnoList = new ArrayList<>();
+		while(result.next()) { //Mientras haya elementos en el objeto result...
+			Alumno alumno = new Alumno(result.getLong("id_alumno"), result.getString("nombre"));
+			alumnoList.add(alumno);
+		}
+		
+		
 		sentencia.close();
 		connect.close();
 		
-		
+		for(Alumno alumno: alumnoList) {
+			System.out.println(alumno.toString());
+		}
 		
 	}
 	

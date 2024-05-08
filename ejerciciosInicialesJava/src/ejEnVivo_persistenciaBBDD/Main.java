@@ -5,8 +5,8 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) {
     	
-//    	ConnectDB connection = new ConnectDB(); //Conectar a xampp
-    	ConnectBDOracle connection = new ConnectBDOracle(); //Conectar a oracle
+    	ConnectDBXampp connection = new ConnectDBXampp(); //Conectar a xampp
+//    	ConnectBDOracle connection = new ConnectBDOracle(); //Conectar a oracle
 //    	ConnectBDMysql connection = new ConnectBDMysql(); //Conectar a Mysql workbench
     	
     	try {
